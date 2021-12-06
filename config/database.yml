@@ -1,0 +1,31 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: starlance_development
+  username: mehak
+  password: Mehak@1234
+  host: localhost
+
+test:
+  <<: *default
+  database: starlance_test
+  username: mehak
+  password: Mehak@1234
+  host: localhost
+
+# staging:
+#   <<: *default
+#   database: starlance_staging
+#   username: starlance
+#   password: <%= ENV['PM_DASHBOARD_DATABASE_PASSWORD'] %>
+
+# production:
+# <<: *default
+# database: starlance_production
+# username: starlance
+# password: <%= ENV['PM_DASHBOARD_DATABASE_PASSWORD'] %>
+
